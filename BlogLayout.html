@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <mata charset="utf-8">
+    <title>BlogLayout</title>
+    <link rel="stylesheet" href="BlogLayout.css">
+    <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+    <script type="text/javascript">
+    window.onload = function () {
+      const week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+      var thismonth = new Date();
+      var day = 1;
+
+      var year = thismonth.getFullYear();
+      var month = thismonth.getMonth();
+      var today = thismonth.getDate();
+
+      document.getElementById('thismonth').innerHTML = month + 1;
+
+      var calender = "<table><tr>";
+      for(var i = 0; i < 7; i++) {
+        calender += "<th>";
+        calender += week[i];
+        calender += "</th>";
+      }
+      calender += "</tr>";
+
+      calender += "<tr>";
+      while(1) {
+        thismonth = new Date(year, month, day);
+        if(thismonth.getMonth() == month+1) break;
+        if(day == 1) {
+          switch (thismonth.getDay()) {
+            case 1:
+            calender += "<td></td>";
+            break;
+            case 2:
+            calender += "<td></td><td></td>";
+            break;
+            case 3:
+            calender += "<td></td><td></td><td></td>";
+            break;
+            case 4:
+            calender += "<td></td><td></td><td></td><td></td>";
+            break;
+            case 5:
+            calender += "<td></td><td></td><td></td><td></td><td></td>";
+            break;
+            case 6:
+            calender += "<td></td><td></td><td></td><td></td><td></td><td></td>";
+            break;
+          }
+        }
+
+        if(today == thismonth.getDate()){
+          calender += "<td class='today'>";
+        } else {
+          calender += "<td>";
+        }
+        calender += day;
+        calender += "</td>";
+
+        if(thismonth.getDay() == 6) {
+          calender += "</tr><tr>";
+        }
+
+        day++;
+      }
+
+      calender += "</tr>";
+      calender += "</table>";
+      document.getElementById('calender').innerHTML = calender;
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    $(function(){
+      $(window).on('load scroll', function() {
+        var winScroll = $(window).scrollTop();
+        var winHeight = $(window).height();
+        var scrollPos = winScroll + (winHeight * 0.8);
+
+        $(".show").each(function() {
+          if($(this).offset().top < scrollPos) {
+            $(this).css({opacity: 1, transform: 'translate(0, 0)'});
+          }
+        });
+      });
+    });
+    </script>
+  </head>
+  <style>
+  body {
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+  </style>
+  <body>
+    <div class="head_area">
+      <p>MY BLOG</p>
+    </div>
+    <img src="head.jpg" class="head_img">
+
+    <ul class="menu">
+      <li><a href="">HOME</a></li>
+      <li><a href="#new">NEW</a></li>
+      <li><a href="#ranking">RANKING</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <br>
+
+    <ol class="bread" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="VlogLayout.html">
+        <span itemprop="name">ホーム</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+
+    <li itemprop="itemListElement" itemscope
+    itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="VlogLayout.html/#new">
+      <span itemprop="name">NEW</span>
+    </a>
+    <meta itemprop="position" content="2" />
+  </li>
+</ol>
+
+<div class="main">
+  <table>
+    <div class="right">
+      <td width="85%">
+        <p class="c">RECOMMEND</p>
+        <div class="article">
+          <a href="#article1">
+            <img src="dogmaf.jpg">
+            <p>新型DOGMA発表！</p>
+          </a>
+        </div>
+        <div class="article">
+          <a href="#article2">
+            <img src="coffee.jpg">
+            <p>おすすめコーヒー豆5選</p>
+          </a>
+        </div>
+        <br><br>
+        <p class="c">NEW</p>
+        <div class="article">
+          <a href="#article3">
+            <img src="desk.jpg">
+            <p>著者のデスク周り紹介</p>
+          </a>
+        </div>
+        <div class="article">
+          <a href="#article4">
+            <img src="java.jpg">
+            <p>Javaの基本について</p>
+          </a>
+        </div>
+        <br><br>
+        <p class="c">ALL ARTICLE</p>
+        <div class="article">
+          <a href="#article5">
+            <img src="linux.jpg">
+            <p>おすすめのLINUXは【初心者向け】</p>
+          </a>
+        </div>
+        <div class="article">
+          <a href="#article6">
+            <img src="coffeestyle.jpg">
+            <p>著者流のコーヒーの入れ方</p>
+          </a>
+        </div>
+        <div class="article">
+          <a href="#article7">
+            <img src="cyclejage.jpg">
+            <p>サイクリングジャージが最高な理由を徹底解説</p>
+          </a>
+        </div>
+        <div class="article">
+          <a href="#article8">
+            <img src="atom.jpg">
+            <p>エディター「Atom」の導入方法</p>
+          </a>
+        </div>
+        <div class="article">
+          <a href="#article9">
+            <img src="javascript.jpg">
+            <p>javascript超入門</p>
+          </a>
+        </div>
+        <div class="article">
+          <a href="#article10">
+            <img src="tor.jpg">
+            <p>ダークウェブの入口。「Tor Browser」</p>
+          </a>
+        </div>
+      </td>
+    </div>
+    <div class="left">
+      <td>
+        <div id="thismonth" class="thismonth"></div>
+        <div id="calender" class="calender"></div>
+        <br><br>
+        <div class="prof">
+          <h4>PROFILE</h4>
+          <img src="bird.jpg">
+          <h5>shiratama</h5>
+          <p>趣味にロードバイクとコーヒー</p>
+          <p>専攻は情報</p>
+          <p>好きなことして生きていきたい</p>
+        </div>
+        <br><br>
+        <div class="cate">
+          <p>CATEGORY</p>
+          <ul>
+            <li><a href="#category_roadbike">ROADBIKE</a></li>
+            <li><a href="#category_cycling">CYCLING</a></li>
+            <li><a href="#category_coffee">COFFEE</a></li>
+            <li><a href="#category_coffeemaker">COFFEE MAKER</a></li>
+            <li><a href="#category_java">JAVA</a></li>
+            <li><a href="#category_javascript">JAVASCRIPT</a></li>
+            <li><a href="#category_linux">LINUX</a></li>
+            <li><a href="#category_gadget">GADGET</a></li>
+          </ul>
+        </div>
+      </td>
+    </div>
+  </table>
+</div>
+<footer class="footer">
+  <div class="logo">
+    <font color="#5eb2eb">S</font>HIRATAMA
+  </div>
+  <ul class="nav">
+    <li><a href="">HOME</a></li>
+    <li><a href="">RECOMMEND</a></li>
+    <li><a href="">TWITTER</a></li>
+    <li><a href="">CONTACT</a></li>
+  </ul>
+  <p class="link">
+    <a href="https://github.com/shiratamamoi90">
+    shiratamamoi90 @ github
+    </a>
+  </p>
+</footer>
+</body>
+</html>

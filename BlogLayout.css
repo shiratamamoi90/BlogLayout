@@ -1,0 +1,249 @@
+@@charset "UTF-8";
+
+body {
+  margin-left: 6%;
+  margin-right: 6%;
+}
+.head_area{
+  position:absolute;
+  top:70px;
+  left:200px;
+  width:450px;
+  height:238px;
+  backdrop-filter: sepia(70%) contrast(230%) blur(20%);
+  -webkit-backdrop-filter: sepia(70%) contrast(230%) blur(20px);
+  background-color: rgba(51, 51, 51, 0.6);
+
+  z-index: 1;
+}
+.head_area p {
+  font-size:80px;
+  color:#ffffff;
+  font-weight:bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px black;
+  font-family: 'Verdana',sans-serif;
+
+  z-index: 2;
+}
+.head_img {
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  position: relative;
+
+  z-index: 0;
+}
+
+.bread {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bread li {
+  display: inline;
+  list-style: none;
+  font-weight: bold;
+}
+.bread li:after {
+  content: '>';
+  padding: 0 0.2em;
+  color: #555;
+}
+.bread li:last-child:after {
+  content: '';
+}
+.bread li a {
+  text-decoration: none;
+  color: gray;
+}
+.bread li:first-child a:before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f015';
+  font-weight: normal;
+  font-size: 1.1em;
+  color: #2e7fea;
+}
+.bread li a:hover {
+  text-decoration: underline;
+}
+
+ul.menu {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: #008deb;
+}
+ul.menu li {
+  float:left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+ul.menu li a {
+  display: block;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+ul.menu li a:hover:not(.active) {
+  background-color: #bcd8eb;
+}
+
+.thismonth {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  background-color:#bcd8eb;
+}
+.calender {
+  text-align: center;
+}
+.calender td {
+  background-color:#bcd8eb;
+}
+.calender .today {
+  font-weight: bold;
+  background: #1e2a33;
+  color: #ffffff;
+}
+
+.prof {
+  text-align: center;
+}
+.prof img {
+  width:55%;
+  height:55%;
+}
+.prof h4 {
+  margin-bottom: 4px;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+.prof h5 {
+  margin-top: 4px;
+}
+.prof p {
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.cate p {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0px;
+  border-bottom: solid 1px black;
+}
+.cate ul {
+  padding: 0;
+}
+.cate ul li {
+  border-left: solid 6px #008deb;
+  border-bottom: solid 2px #dadada;
+  background: whitesmoke;
+  margin-bottom: 5px;
+  line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;
+  font-weight: bold;
+}
+.cate ul li a {
+  color: #404040;
+}
+
+.slide-bottom {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.3s 0s ease-out;
+}
+.c {
+  font-weight: bold;
+  font-size: 30px;
+  border-bottom: solid 2px black;
+  text-align: left;
+}
+
+.article {
+  display: inline-block;
+  width:35%;
+  height:30%;
+  margin: 5%;
+  background-color:#5eb2eb;
+  box-shadow: 3px 3px 4px gray;
+  padding: 5px;
+}
+.article img {
+  width:100%;
+  height:80%;
+}
+.article p {
+  font-size: 20px;
+  font-weight: bold;
+  color:black;
+}
+
+.footer {
+  position: relative;
+  background: #222;
+  height: 200px;
+  margin: auto;
+}
+.footer ul {
+  list-style: none;
+  margin: 6px 0;
+  padding: 0;
+}
+.footer .logo {
+  text-align: center;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 4px;
+  padding: 15px;
+  letter-spacing: 3px;
+}
+.footer .nav a {
+  color: #ffffff;
+  display: block;
+  padding: 0 10px;
+}
+.footer .nav {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 14px 0;
+}
+.footer .link {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+  background: #222;
+}
+.footer a:link, .footer a:visited, .footer a:hover, .footer a:active {
+  color: #ffffff;
+}
+
+.main table{
+  width:100%;
+}
+.main .right td{
+  width:85%;
+}
+.main .left td{
+  padding-top: 0px;
+  margin-top: 0px;
+}
